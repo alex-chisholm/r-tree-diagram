@@ -2,14 +2,14 @@
 
 ## Description
 
-A function to create tree diagram visualizations for conditional probabilities in R. 
+A function to create **tree diagram visualizations** for conditional probabilities in R. 
 
 ## Input data
 
 The only required input to the function is a dataframe with the following structure. The `pathString` column 
 should have the names of the potential outcomes at each tree level. For example, there will be *no rain* or there will be *rain* as our first-level outcome. 
 The column also includes second-level outcomes (e.g., no rain and a 65 degree day) separated by a forward-slash `/`. The `prob` column contains the probabilities associated with 
-each path. Although there is no limit to the number of conditional paths that might be included, at a certain stage the visualization will become challenging to read.
+each path. Although there is no limit to the number of conditional paths that might be included, at a certain stage the visualization will become challenging to read. See `probabilities.csv` example file in this repo.
 
 | pathString | prob |
 |----------|:-------------:|
@@ -26,7 +26,7 @@ each path. Although there is no limit to the number of conditional paths that mi
 
 ## Usage
 
-make_my_tree(mydf = prob_data, branch_levels = NULL, show_rank = TRUE, direction = "LR",  root_name = "Start", font_name = 'helvetica')
+`make_my_tree(mydf = prob_data, branch_levels = NULL, show_rank = TRUE, direction = "LR",  root_name = "Start", font_name = 'helvetica')`
 
 ## Arguments
 
@@ -35,7 +35,7 @@ make_my_tree(mydf = prob_data, branch_levels = NULL, show_rank = TRUE, direction
 | mydf | dataframe with the probability data as described above |
 | branch_levels | the number of branch levels to show       |  
 | show_rank | logical. should ranks be shown in final branch |  
-| direction | the direction of the tree. One of "LR" (left-to-right), "RL" (right-to-left), or "TB" (top-to-bottom), or "BT" (bottom-to-top)  |  
+| direction | the direction of the tree. One of "LR" (left-to-right), "RL" (right-to-left), "TB" (top-to-bottom), or "BT" (bottom-to-top)  |  
 | root_name | character. the name label for the starting node |  
 | font_name | character. font type such as 'helvetica' (default) or 'times' |  
 
@@ -46,24 +46,31 @@ make_my_tree(mydf = prob_data, branch_levels = NULL, show_rank = TRUE, direction
 ## Examples
 
 1. Default output that shows everything
+
 `make_my_tree(prob_data)`
-![Default](output/default.png)
+
+![](output/default.png)
 
 2. Remove the rank display variable
+
 `make_my_tree(prob_data, show_rank = FALSE)` 
-![Default](output/no_rank.png)
+
+![](output/no_rank.png)
 
 3. Hide the cumulative probabilities by reduces the number of branch levels shown
+
 `make_my_tree(prob_data, branch_levels = 2,  show_rank = FALSE)` 
-![Default](output/two_branch_levels.png)
+
+![](output/two_branch_levels.png)
 
 4. Change start node name and font type
+
 `make_my_tree(mydf = prob_data, branch_levels = 2, show_rank = False, direction = "LR", root_name = "Weather", font_name = "times")` 
-![Default](output/formatting.png)
+
+![](output/formatting.png)
 
 ## Inspiration
 
 * [Introduction to data.tree by Christoph Glur](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html)
-data.tree sample applications by Christoph Glur
 * [data.tree sample applications by Christoph Glur](https://cran.r-project.org/web/packages/data.tree/vignettes/applications.html)
 * [Node Shapes on www.graphviz.org](https://www.graphviz.org/doc/info/shapes.html)
