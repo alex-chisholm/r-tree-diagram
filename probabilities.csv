@@ -1,0 +1,11 @@
+pathString,prob
+no rain,0.72
+no rain/95°F,0.25
+no rain/85°F,0.55
+no rain/75°F,0.15
+no rain/65°F,0.05
+rain,0.28
+rain/95°F,0.05
+rain/85°F,0.25
+rain/75°F,0.35
+rain/65°F,0.35
