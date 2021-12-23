@@ -69,6 +69,10 @@ each path. Although there is no limit to the number of conditional paths that mi
 
 ![](output/formatting.png)
 
+## Read More
+
+Blog post about tree diagrams with [simple case study](https://www.datakwery.com/post/tree-diagrams-in-r/)
+
 ## Inspiration
 
 * [Introduction to data.tree by Christoph Glur](https://cran.r-project.org/web/packages/data.tree/vignettes/data.tree.html)
